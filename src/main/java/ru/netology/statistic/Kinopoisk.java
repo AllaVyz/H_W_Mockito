@@ -2,14 +2,14 @@ package ru.netology.statistic;
 
 public class Kinopoisk {
     private String[] movies = new String[0];
-    private int Limit;
+    private int limit;
 
-    public Kinopoisk(int Limit) {
-        this.Limit = Limit;
+    public Kinopoisk(int limit) {
+        this.limit = limit;
     }
 
     public Kinopoisk() {
-        Limit = 5;
+        limit = 5;
     }
 
     public void add(String movie) {
@@ -27,17 +27,15 @@ public class Kinopoisk {
 
     public String[] findLast() {
         int resultLength;
-        if (Limit < movies.length) {
-            resultLength = Limit;
+        if (limit < movies.length) {
+            resultLength = limit;
         } else {
             resultLength = movies.length;
         }
         String[] result = new String[resultLength];
         for (int i = 0; i < resultLength; i++) {
-            result[0] = movies[movies.length - 1];
-            result[1] = movies[movies.length - 2];
-            result[2] = movies[movies.length - 3];
-            result[i] = movies[movies.length - 1 - i];
+            result[i] = movies[movies.length - 1 -i];
+
         }
         return result;
 
